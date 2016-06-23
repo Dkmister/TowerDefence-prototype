@@ -1,0 +1,5 @@
+Resources:
+1 - http://www.gamedev.net/page/resources/_/technical/game-programming/a-rudimentary-3d-game-engine-built-with-c-opengl-and-glsl-r4176
+2 - http://irrlicht.sourceforge.net/
+3 - https://en.wikipedia.org/wiki/List_of_game_engines
+4 - https://www.reddit.com/r/gamedev/comments/2eb5d8/copenglsdl_game_engine_tutorials_for_an_absolute/
