@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="0.Precompiled Headers">
+      <UniqueIdentifier>{8f88377a-7571-4440-aa8b-2a4d4181838a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1.Resource Files">
+      <UniqueIdentifier>{fe183353-2a91-4827-9bb3-4889c89bab16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2.Source Files">
+      <UniqueIdentifier>{ae2ca88c-d86f-4b36-be4e-d4dc15c67a45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2.Source Files\glsl">
+      <UniqueIdentifier>{ebf35765-3569-44c4-b730-aa55acd220e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2.Source Files\gfx">
+      <UniqueIdentifier>{28e3ad69-2715-4d0a-9b95-71936a083384}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2.Source Files\gl3w">
+      <UniqueIdentifier>{7626beec-6d26-4c12-8b4c-0bf5dd14f651}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2.Source Files\Camera">
+      <UniqueIdentifier>{9ed46725-c186-471c-9756-0b843a5e3e17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2.Source Files\Scene">
+      <UniqueIdentifier>{0deb9452-4f00-48c2-aba1-b6a65622daeb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>0.Precompiled Headers</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>2.Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\glsl\FrameBufferObject.cpp">
+      <Filter>2.Source Files\glsl</Filter>
+    </ClCompile>
+    <ClCompile Include="source\glsl\Shader.cpp">
+      <Filter>2.Source Files\glsl</Filter>
+    </ClCompile>
+    <ClCompile Include="source\glsl\ShaderProgram.cpp">
+      <Filter>2.Source Files\glsl</Filter>
+    </ClCompile>
+    <ClCompile Include="source\glsl\Text2D.cpp">
+      <Filter>2.Source Files\glsl</Filter>
+    </ClCompile>
+    <ClCompile Include="source\glsl\TextureObject.cpp">
+      <Filter>2.Source Files\glsl</Filter>
+    </ClCompile>
+    <ClCompile Include="source\glsl\UniformBufferObject.cpp">
+      <Filter>2.Source Files\glsl</Filter>
+    </ClCompile>
+    <ClCompile Include="source\glsl\VertexBufferObject.cpp">
+      <Filter>2.Source Files\glsl</Filter>
+    </ClCompile>
+    <ClCompile Include="source\gfx\Scene.cpp">
+      <Filter>2.Source Files\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="include\GL\gl3w.c">
+      <Filter>2.Source Files\gl3w</Filter>
+    </ClCompile>
+    <ClCompile Include="source\LightSource.cpp">
+      <Filter>2.Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\gfx\ogldev_util.cpp">
+      <Filter>2.Source Files\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="source\gfx\ogldev_skinned_mesh.cpp">
+      <Filter>2.Source Files\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="source\gfx\ogldev_math_3d.cpp">
+      <Filter>2.Source Files\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="source\HeightMap.cpp">
+      <Filter>2.Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Loaders.cpp">
+      <Filter>2.Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ArcballCamera.cpp">
+      <Filter>2.Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="source\FirstPersonCamera.cpp">
+      <Filter>2.Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="source\DemoScene.cpp">
+      <Filter>2.Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\HeightScene.cpp">
+      <Filter>2.Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ThirdtPersonCamera.cpp">
+      <Filter>2.Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameScene.cpp" />
+    <ClCompile Include="source\TopCamera.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>0.Precompiled Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="source\glsl\Error.h">
+      <Filter>2.Source Files\glsl</Filter>
+    </ClInclude>
+    <ClInclude Include="source\glsl\FrameBufferObject.h">
+      <Filter>2.Source Files\glsl</Filter>
+    </ClInclude>
+    <ClInclude Include="source\glsl\Shader.h">
+      <Filter>2.Source Files\glsl</Filter>
+    </ClInclude>
+    <ClInclude Include="source\glsl\ShaderProgram.h">
+      <Filter>2.Source Files\glsl</Filter>
+    </ClInclude>
+    <ClInclude Include="source\glsl\Text2D.h">
+      <Filter>2.Source Files\glsl</Filter>
+    </ClInclude>
+    <ClInclude Include="source\glsl\TextureObject.h">
+      <Filter>2.Source Files\glsl</Filter>
+    </ClInclude>
+    <ClInclude Include="source\glsl\UniformBufferObject.h">
+      <Filter>2.Source Files\glsl</Filter>
+    </ClInclude>
+    <ClInclude Include="source\glsl\VertexArrayObject.h">
+      <Filter>2.Source Files\glsl</Filter>
+    </ClInclude>
+    <ClInclude Include="source\glsl\VertexBufferObject.h">
+      <Filter>2.Source Files\glsl</Filter>
+    </ClInclude>
+    <ClInclude Include="source\gfx\Scene.h">
+      <Filter>2.Source Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="source\gfx\string.h">
+      <Filter>2.Source Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\gl3w.h">
+      <Filter>2.Source Files\gl3w</Filter>
+    </ClInclude>
+    <ClInclude Include="source\LightSource.h">
+      <Filter>2.Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\gfx\ogldev_util.h">
+      <Filter>2.Source Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="source\gfx\ogldev_types.h">
+      <Filter>2.Source Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="source\gfx\ogldev_skinned_mesh.h">
+      <Filter>2.Source Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="source\gfx\ogldev_math_3d.h">
+      <Filter>2.Source Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="source\HeightMap.h">
+      <Filter>2.Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Matrices.h">
+      <Filter>2.Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Loaders.h">
+      <Filter>2.Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ArcballCamera.h">
+      <Filter>2.Source Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="source\FirstPersonCamera.h">
+      <Filter>2.Source Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Camera.h">
+      <Filter>2.Source Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="source\DemoScene.h">
+      <Filter>2.Source Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\HeightScene.h">
+      <Filter>2.Source Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Scene.h">
+      <Filter>2.Source Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ThirdPersonCamera.h">
+      <Filter>2.Source Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="source\GameScene.h" />
+    <ClInclude Include="source\TopCamera.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\phong\phong.vert">
+      <Filter>1.Resource Files</Filter>
+    </None>
+    <None Include="resources\phong\phong.frag">
+      <Filter>1.Resource Files</Filter>
+    </None>
+    <None Include="resources\heightmap\terrain.frag">
+      <Filter>1.Resource Files</Filter>
+    </None>
+    <None Include="resources\heightmap\terrain.vert">
+      <Filter>1.Resource Files</Filter>
+    </None>
+    <None Include="resources\heightmap\grass.frag">
+      <Filter>1.Resource Files</Filter>
+    </None>
+    <None Include="resources\heightmap\grass.geom">
+      <Filter>1.Resource Files</Filter>
+    </None>
+    <None Include="resources\heightmap\grass.vert">
+      <Filter>1.Resource Files</Filter>
+    </None>
+    <None Include="resources\shaders\default_shader.frag">
+      <Filter>1.Resource Files</Filter>
+    </None>
+    <None Include="resources\shaders\default_shader.vert">
+      <Filter>1.Resource Files</Filter>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+</Project>
