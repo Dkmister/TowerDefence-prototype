@@ -49,41 +49,41 @@ class Tower
 void Tower::setcost()
 {
     this->cost = tower_cost;
-}
+};
 
 void Tower::setdamage()
 {
     this->damage = tower_damage;
-}
+};
 
 void Tower::setrate()
 {
     this->firerate = tower_fire_rate;
-}
+};
 
 void Tower::setrange()
 {
     this->attackRange = tower_range;
-}
+};
 
 // Leia a descrição, amiguinho :^)
 
 double Tower::getrate()
 {
     return firerate;
-}
+};
 
 int Tower::getrange()
 {
     return attackRange;
-}
+};
 
 int Tower::getdamage()
 {
     return damage;
-}
+};
 
 int Tower::getcost()
 {
     return cost;
-}
+};
