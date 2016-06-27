@@ -4,7 +4,7 @@
 FirstPersonCamera::FirstPersonCamera(const glm::vec3& eye, const glm::vec3& center, const glm::vec3& up) 
    : Camera(eye, center, up)
 {
-   _keyboardSpeed = 25.0f;
+   _keyboardSpeed = 100.0f;
    _mouseSpeed = 0.002f;
 
    _lastXPos = 0.f;
@@ -25,7 +25,7 @@ void FirstPersonCamera::computeFromInputs(GLFWwindow* window) {
    // Compute time difference between current and last frame
    double currentTime = glfwGetTime();
    float deltaTime = float(currentTime - _glfwTime);
-
+   
    // Get mouse position
 
    double currentXpos = _lastXPos, currentYpos = _lastYPos;

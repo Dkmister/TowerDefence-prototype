@@ -28,6 +28,7 @@ public:
 protected:
 	std::unique_ptr<Camera> _camera;
 
+
 	std::unique_ptr<SkinnedMesh> _mesh;
 	std::unique_ptr<HeightMap> _heightmap;
 	std::unique_ptr<LightManager> _lights;
@@ -38,6 +39,9 @@ protected:
 	irrklang::ISoundEngine* _engine;
 
 private:
+	float tempoJogo = 0; //em segundos
+	double bob_pos[2];
+
 };
 
 #endif // __GAME_SCENE_H__

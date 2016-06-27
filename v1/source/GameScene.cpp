@@ -3,6 +3,9 @@
 
 #include "Matrices.h"
 
+
+
+
 GameScene::GameScene() {
 	// start the sound engine with default parameters
 	_engine = irrklang::createIrrKlangDevice();
@@ -13,7 +16,7 @@ GameScene::GameScene() {
 	}
 
 	irrklang::vec3df pos3d(0.0f, 100.0f, 100.0f);
-	_music = _engine->play3D("./resources/media/ophelia.mp3", pos3d, true, false, true);
+	_music = _engine->play3D("./resources/media/escape.mp3", pos3d, true, false, true);
 
 	if (!_music) {
 		printf("Could not load sound\n");
@@ -58,9 +61,9 @@ GameScene::GameScene() {
 
 	//////////////////////////////////////////////////////////////////////////////////////
 
-	//_camera.reset(new FirstPersonCamera(glm::vec3(0.0f, 100.0f, 100.0f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.0f, 1.0f, 0.0f)));
+	_camera.reset(new FirstPersonCamera(glm::vec3(0.0f, 100.0f, 100.0f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.0f, 1.0f, 0.0f)));
 	//_camera.reset(new ThirdtPersonCamera(glm::vec3(0.0f, 100.0f, 100.0f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.0f, 1.0f, 0.0f)));
-	_camera.reset(new TopCamera(glm::vec3(0.0f, 400.0f, 0.0f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.0f,1.0f, 0.0f)));
+	//_camera.reset(new TopCamera(glm::vec3(0.0f, 400.0f, 0.0f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.0f,1.0f, 0.0f)));
 }
 
 GameScene::~GameScene() {
@@ -71,11 +74,19 @@ GameScene::~GameScene() {
 void GameScene::render(GLFWwindow* window) {
 	_camera->computeFromInputs(window);
 
+
+	tempoJogo = glfwGetTime();
+
+
+	double bobSpeed = 0.05;
+	printf("%1.f\n",tempoJogo);
+
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glCullFace(GL_BACK);
 
 	int width, height;
 	glfwGetWindowSize(window, &width, &height);
+	
 
 	glm::mat4 Projection = glm::perspective(60.f, width / (float)height, 0.1f, 1000.0f);
 	glm::mat4 View = _camera->getMatrix();
@@ -97,8 +108,12 @@ void GameScene::render(GLFWwindow* window) {
 		_heightmap->getHeightFromVertexData(100, 100).z)
 		);
 
-	Model = glm::translate(Model, _heightmap->getHeightFromVertexData(100, 100));
+	Model = glm::translate(Model, _heightmap->getHeightFromVertexData(100 + bob_pos[0], 100+bob_pos[1]));
 	Model = glm::scale(Model, glm::vec3(50.f));
+
+	
+
+	bob_pos[1] += bobSpeed;
 
 	Model = glm::translate(Model, glm::vec3(0.f, 0.4f, 0.f));
 	Model = glm::rotate(Model, 270.f, glm::vec3(1.f, 0.f, 0.f));
@@ -126,5 +141,6 @@ void GameScene::render(GLFWwindow* window) {
 
 	if (glfwGetKey(window, 'B') == GLFW_PRESS) {
 		_engine->play2D("./resources/media/bell.wav");
+		
 	}
 }

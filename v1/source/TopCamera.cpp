@@ -12,7 +12,7 @@ TopCamera::TopCamera(const glm::vec3& eye, const glm::vec3& center, const glm::v
 	: Camera(eye, center, up)
 {
 	_keyboardSpeed = 400.0f;
-	_mouseSpeed = 0.002f;
+	_mouseSpeed = 1.0f;
 
 	_lastXPos = 0.f;
 	_lastYPos = 0.f;
@@ -27,22 +27,17 @@ TopCamera::TopCamera(const glm::vec3& eye, const glm::vec3& center, const glm::v
 TopCamera::~TopCamera() { }
 
 void TopCamera::computeFromInputs(GLFWwindow* window) {
+	GLFWscrollfun sfun;
+
 	if (_glfwTime == -1) _glfwTime = glfwGetTime();
 
 	// Compute time difference between current and last frame
 	double currentTime = glfwGetTime();
 	float deltaTime = float(currentTime - _glfwTime);
 
-	// Get mouse position
 
-	double currentXpos = _lastXPos, currentYpos = _lastYPos;
-	if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_1) == GLFW_PRESS) {
-		glfwGetCursorPos(window, &currentXpos, &currentYpos);
-	}
 
-	// Compute new orientation
-	_horizontalAngle += _mouseSpeed * float(_lastXPos - currentXpos);
-	_verticalAngle += _mouseSpeed * float(_lastYPos - currentYpos);
+
 
 	// Direction : Spherical coordinates to Cartesian coordinates conversion
 	glm::vec3 direction(
@@ -58,12 +53,14 @@ void TopCamera::computeFromInputs(GLFWwindow* window) {
 	_up = glm::cross(right, direction);
 
 
-	// Strafe right
+
+
+	// Move Right
 	if (glfwGetKey(window, 'D') == GLFW_PRESS && _position[0]<XMIN) {
 		_position += right * deltaTime * _keyboardSpeed;
 		//printf("%2.2f\n", _position[WHAT]);
 	}
-	// Strafe left
+	// Move Left
 	if (glfwGetKey(window, 'A') == GLFW_PRESS && _position[0]>XMAX) {
 		_position -= right * deltaTime * _keyboardSpeed;
 		//printf("%2.2f\n",_position[WHAT]);
