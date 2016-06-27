@@ -40,7 +40,7 @@ protected:
 
 private:
 	float tempoJogo = 0; //em segundos
-	double bob_pos[2];
+	double bob_pos[2] = {0,0};
 
 };
 
