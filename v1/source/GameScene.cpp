@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "GameScene.h"
+#include "gfx\Scene.h"
 
 #include "Matrices.h"
 
