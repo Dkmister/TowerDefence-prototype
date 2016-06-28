@@ -58,6 +58,7 @@ GameScene::GameScene() {
 	_mesh->LoadMesh("./resources/scenes/bob/boblampclean.md5mesh");
 
 	//////////////////////////////////////////////////////////////////////////////////////
+	
 
 	//_camera.reset(new FirstPersonCamera(glm::vec3(0.0f, 100.0f, 100.0f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.0f, 1.0f, 0.0f)));
 	//_camera.reset(new ThirdtPersonCamera(glm::vec3(0.0f, 100.0f, 100.0f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.0f, 1.0f, 0.0f)));
@@ -78,7 +79,8 @@ GameScene::~GameScene() {
 	
 
 void GameScene::render(GLFWwindow* window) {
-	
+	gfx::Scene tower("./resources/scenes/tower/tower.obj");
+	tower.load();
 	
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -88,9 +90,7 @@ void GameScene::render(GLFWwindow* window) {
 	//////
 	_camera->computeFromInputs(window);
 
-	gfx::Scene tower("./resources/scenes/tower/tower.obj");
-	tower.load();
-
+	
 	//struct Matrices matrices;
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -143,6 +143,7 @@ void GameScene::render(GLFWwindow* window) {
 
 	Model = glm::translate(Model, glm::vec3(0.f, 0.4f, 0.f));
 	Model = glm::rotate(Model, 270.f, glm::vec3(1.f, 0.f, 0.f));
+	
 	
 
 	//matrices.update(*_shader, Model);
