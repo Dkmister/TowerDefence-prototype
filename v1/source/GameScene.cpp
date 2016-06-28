@@ -69,8 +69,23 @@ GameScene::~GameScene() {
 	_engine->drop(); // delete engine
 }
 
+
+
+
 void GameScene::render(GLFWwindow* window) {
+	/*
+	struct Matrices matrices;
+
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_CULL_FACE);
+	glEnable(GL_BLEND);
+	*//////
 	_camera->computeFromInputs(window);
+
+	gfx::Scene tower("./resources/scenes/tower/tower.obj");
+	tower.load();
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glCullFace(GL_BACK);
@@ -111,7 +126,13 @@ void GameScene::render(GLFWwindow* window) {
 	_mesh->render(*_shader);
 
 	_shader->unuse();
+	////////////////////////////////////
+	Model = glm::mat4(1.f);
+	Model = glm::translate(Model, glm::vec3(-12.f, 0.f, 0.f));
+	
+	Matrices.update(_shader, Model);
 
+	tower.render(*_shader);
 	//////////////////////////////////////////////////////////////////////////////////////
 
 	_engine->setListenerPosition(

@@ -4,6 +4,10 @@
 #include "glsl/ShaderProgram.h"
 
 namespace util {
+	glm::mat4 Normal;
+	glm::mat4 ModelView;
+	glm::mat4 ModelViewProjection;
+	//renderização por matriz em pilha
    static void updateMVP(glsl::ShaderProgram& program, const glm::mat4 &model, const glm::mat4 &view, const glm::mat4 &projection) {
       glm::mat4 ModelView(view * model);
       glm::mat4 Normal(glm::inverseTranspose(glm::mat3(ModelView)));      
