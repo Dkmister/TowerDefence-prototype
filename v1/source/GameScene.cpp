@@ -71,17 +71,15 @@ GameScene::~GameScene() {
 
 
 
-
 void GameScene::render(GLFWwindow* window) {
-	/*
-	struct Matrices matrices;
-
+	
+	
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
 	glEnable(GL_BLEND);
-	*//////
+	//////
 	_camera->computeFromInputs(window);
 
 	gfx::Scene tower("./resources/scenes/tower/tower.obj");
@@ -127,12 +125,22 @@ void GameScene::render(GLFWwindow* window) {
 
 	_shader->unuse();
 	////////////////////////////////////
-	Model = glm::mat4(1.f);
-	Model = glm::translate(Model, glm::vec3(-12.f, 0.f, 0.f));
 	
-	Matrices.update(_shader, Model);
+
+	
+
+	Model = glm::mat4(1.f);
+	Model = glm::translate(Model, _heightmap->getHeightFromVertexData(100, 100));
+	Model = glm::scale(Model, glm::vec3(50.f));
+
+	Model = glm::translate(Model, glm::vec3(0.f, 0.4f, 0.f));
+	Model = glm::rotate(Model, 270.f, glm::vec3(1.f, 0.f, 0.f));
+	
+
+	util::updateMVP(*_shader, Model, View, Projection);
 
 	tower.render(*_shader);
+	_shader->unuse();
 	//////////////////////////////////////////////////////////////////////////////////////
 
 	_engine->setListenerPosition(
