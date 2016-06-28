@@ -69,7 +69,13 @@ GameScene::~GameScene() {
 	_engine->drop(); // delete engine
 }
 
-
+/*struct Matrices {
+	glm::mat4 Normal;
+	glm::mat4 ModelView;
+	glm::mat4 ModelViewProjection;
+	
+};*/
+	
 
 void GameScene::render(GLFWwindow* window) {
 	
@@ -84,6 +90,8 @@ void GameScene::render(GLFWwindow* window) {
 
 	gfx::Scene tower("./resources/scenes/tower/tower.obj");
 	tower.load();
+
+	//struct Matrices matrices;
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glCullFace(GL_BACK);
@@ -137,7 +145,7 @@ void GameScene::render(GLFWwindow* window) {
 	Model = glm::rotate(Model, 270.f, glm::vec3(1.f, 0.f, 0.f));
 	
 
-	util::updateMVP(*_shader, Model, View, Projection);
+	//matrices.update(*_shader, Model);
 
 	tower.render(*_shader);
 	_shader->unuse();
