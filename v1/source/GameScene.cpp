@@ -13,7 +13,7 @@ GameScene::GameScene() {
 	}
 
 	irrklang::vec3df pos3d(0.0f, 100.0f, 100.0f);
-	_music = _engine->play3D("./resources/media/ophelia.mp3", pos3d, true, false, true);
+	_music = _engine->play3D("./resources/media/esc.mp3", pos3d, true, false, true);
 
 	if (!_music) {
 		printf("Could not load sound\n");
@@ -124,7 +124,8 @@ void GameScene::render(GLFWwindow* window) {
 		irrklang::vec3df(_camera->getUp().x, _camera->getUp().y, _camera->getUp().z)
 		);
 
-	if (glfwGetKey(window, 'B') == GLFW_PRESS) {
-		_engine->play2D("./resources/media/bell.wav");
+	
+	if (glfwGetKey(window, 'X') == GLFW_PRESS) {
+		_engine->play2D("./resources/media/cena.mp3");
 	}
 }
